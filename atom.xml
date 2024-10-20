@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-10-20T11:25:59.482Z</updated>
+  <updated>2024-10-20T12:38:51.528Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>动态规划的基础</title>
+    <link href="http://example.com/2024/10/20/leetcode/dynamic-programming/base/"/>
+    <id>http://example.com/2024/10/20/leetcode/dynamic-programming/base/</id>
+    <published>2024-10-20T12:14:45.275Z</published>
+    <updated>2024-10-20T12:38:51.528Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基本性质&quot;&gt;&lt;a href=&quot;#基本性质&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
     <title>棋盘覆盖问题</title>
-    <link href="http://example.com/2024/10/20/leetcode/DivideandConquer/%E6%A3%8B%E7%9B%98%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/"/>
-    <id>http://example.com/2024/10/20/leetcode/DivideandConquer/%E6%A3%8B%E7%9B%98%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/</id>
+    <link href="http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%A3%8B%E7%9B%98%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%A3%8B%E7%9B%98%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/</id>
     <published>2024-10-20T10:23:16.015Z</published>
-    <updated>2024-10-20T11:25:59.482Z</updated>
+    <updated>2024-10-20T11:32:51.081Z</updated>
     
     
       
@@ -52,8 +83,8 @@
   
   <entry>
     <title>最近点对问题</title>
-    <link href="http://example.com/2024/10/20/leetcode/DivideandConquer/%E6%9C%80%E8%BF%91%E7%82%B9%E5%AF%B9%E9%97%AE%E9%A2%98/"/>
-    <id>http://example.com/2024/10/20/leetcode/DivideandConquer/%E6%9C%80%E8%BF%91%E7%82%B9%E5%AF%B9%E9%97%AE%E9%A2%98/</id>
+    <link href="http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%9C%80%E8%BF%91%E7%82%B9%E5%AF%B9%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%9C%80%E8%BF%91%E7%82%B9%E5%AF%B9%E9%97%AE%E9%A2%98/</id>
     <published>2024-10-20T09:16:39.768Z</published>
     <updated>2024-10-20T09:21:22.329Z</updated>
     
@@ -86,8 +117,8 @@
   
   <entry>
     <title>寻找第k小元素</title>
-    <link href="http://example.com/2024/10/20/leetcode/DivideandConquer/%E5%AF%BB%E6%89%BE%E7%AC%ACk%E5%B0%8F%E5%85%83%E7%B4%A0/"/>
-    <id>http://example.com/2024/10/20/leetcode/DivideandConquer/%E5%AF%BB%E6%89%BE%E7%AC%ACk%E5%B0%8F%E5%85%83%E7%B4%A0/</id>
+    <link href="http://example.com/2024/10/20/leetcode/divide-and-conquer/%E5%AF%BB%E6%89%BE%E7%AC%ACk%E5%B0%8F%E5%85%83%E7%B4%A0/"/>
+    <id>http://example.com/2024/10/20/leetcode/divide-and-conquer/%E5%AF%BB%E6%89%BE%E7%AC%ACk%E5%B0%8F%E5%85%83%E7%B4%A0/</id>
     <published>2024-10-20T06:59:06.621Z</published>
     <updated>2024-10-20T09:17:20.510Z</updated>
     
@@ -120,8 +151,8 @@
   
   <entry>
     <title>分治法基本内容</title>
-    <link href="http://example.com/2024/10/20/leetcode/DivideandConquer/base/"/>
-    <id>http://example.com/2024/10/20/leetcode/DivideandConquer/base/</id>
+    <link href="http://example.com/2024/10/20/leetcode/divide-and-conquer/base/"/>
+    <id>http://example.com/2024/10/20/leetcode/divide-and-conquer/base/</id>
     <published>2024-10-20T06:31:07.002Z</published>
     <updated>2024-10-20T06:31:07.002Z</updated>
     
@@ -151,8 +182,8 @@
   
   <entry>
     <title>最大子数组问题</title>
-    <link href="http://example.com/2024/10/20/leetcode/DivideandConquer/%E6%9C%80%E5%A4%A7%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://example.com/2024/10/20/leetcode/DivideandConquer/%E6%9C%80%E5%A4%A7%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/</id>
+    <link href="http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%9C%80%E5%A4%A7%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%9C%80%E5%A4%A7%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/</id>
     <published>2024-10-20T06:31:07.000Z</published>
     <updated>2024-10-20T06:31:07.001Z</updated>
     
@@ -616,37 +647,6 @@
     <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
     
     <category term="栈" scheme="http://example.com/tags/%E6%A0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 049：字母异位词分组</title>
-    <link href="http://example.com/2023/08/26/leetcode/String/LeetCode%20049%EF%BC%9A%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/"/>
-    <id>http://example.com/2023/08/26/leetcode/String/LeetCode%20049%EF%BC%9A%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/</id>
-    <published>2023-08-25T23:32:23.094Z</published>
-    <updated>2023-08-25T23:33:17.529Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;题目地址&quot;&gt;&lt;a href=&quot;#题目地址&quot; class=&quot;headerlink&quot; title=&quot;题目地址&quot;&gt;&lt;/a&gt;题目地址&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="leetcode" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/leetcode/"/>
-    
-    <category term="049字母异位词分组" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/leetcode/049%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/"/>
-    
-    
-    <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
-    
-    <category term="字符串" scheme="http://example.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
