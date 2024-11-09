@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>易函123</title>
+  <icon>http://example.com/icon.png</icon>
+  <subtitle>吾生也有涯，而知也无涯 。以有涯随无涯，殆已！已而为知者，殆而已矣！为善无近名，为恶无近刑。缘督以为经，可以保身，可以全生，可以养亲，可以尽年。</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2024-11-09T02:52:21.349Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>易函123</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>什么是虚拟DOM？为什么需要虚拟DOM</title>
+    <link href="http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E8%99%9A%E6%8B%9FDOM/"/>
+    <id>http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E8%99%9A%E6%8B%9FDOM/</id>
+    <published>2024-11-09T02:45:51.721Z</published>
+    <updated>2024-11-09T02:52:21.349Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;什么是虚拟-DOM&quot;&gt;&lt;a href=&quot;#什么是虚拟-DOM&quot; class=&quot;headerlink&quot; title=&quot;什么是虚拟 DOM&quot;&gt;&lt;/a&gt;什么是虚拟 DOM&lt;/h1&gt;&lt;p&gt;virtual DOM 跨平台能力 RN WEEX&lt;/p&gt;
+&lt;p&gt;js</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JavaScript" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
+    
+    <category term="什么是虚拟DOM？为什么需要虚拟DOM" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/%E4%BB%80%E4%B9%88%E6%98%AF%E8%99%9A%E6%8B%9FDOM%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E8%99%9A%E6%8B%9FDOM/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="JavaScript面试" scheme="http://example.com/tags/JavaScript%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深浅拷贝</title>
+    <link href="http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/"/>
+    <id>http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</id>
+    <published>2024-11-09T02:29:44.807Z</published>
+    <updated>2024-11-09T02:41:53.322Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot; title=&quot;数据类型&quot;&gt;&lt;/a&gt;数据类型&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;基本类型 栈内存&lt;/li&gt;
+&lt;li&gt;引用类型 堆内存 变量</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JavaScript" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
+    
+    <category term="深浅拷贝" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="JavaScript面试" scheme="http://example.com/tags/JavaScript%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>输入url,到页面展示的过程</title>
+    <link href="http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E8%BE%93%E5%85%A5url,%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E7%9A%84%E8%BF%87%E7%A8%8B/"/>
+    <id>http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E8%BE%93%E5%85%A5url,%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E7%9A%84%E8%BF%87%E7%A8%8B/</id>
+    <published>2024-11-09T02:18:23.078Z</published>
+    <updated>2024-11-09T02:23:21.489Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;过程&quot;&gt;&lt;a href=&quot;#过程&quot; class=&quot;headerlink&quot; title=&quot;过程&quot;&gt;&lt;/a&gt;过程&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;输入 url&lt;/li&gt;
+&lt;li&gt;浏览器缓存 - 系统缓存 - 路由器缓存</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JavaScript" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
+    
+    <category term="输入url" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/%E8%BE%93%E5%85%A5url/"/>
+    
+    <category term="到页面展示的过程" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/%E8%BE%93%E5%85%A5url/%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E7%9A%84%E8%BF%87%E7%A8%8B/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="JavaScript面试" scheme="http://example.com/tags/JavaScript%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6模块和CommonJS的异同</title>
+    <link href="http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/ES6%E6%A8%A1%E5%9D%97%E5%92%8CCommonJS%E7%9A%84%E5%BC%82%E5%90%8C/"/>
+    <id>http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/ES6%E6%A8%A1%E5%9D%97%E5%92%8CCommonJS%E7%9A%84%E5%BC%82%E5%90%8C/</id>
+    <published>2024-11-09T02:08:48.973Z</published>
+    <updated>2024-11-09T02:16:46.662Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;相同点&quot;&gt;&lt;a href=&quot;#相同点&quot; class=&quot;headerlink&quot; title=&quot;相同点&quot;&gt;&lt;/a&gt;相同点&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;对引入对象进行赋值，即对对象内部属性的值的改变&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;区别&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JavaScript" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
+    
+    <category term="ES6模块和CommonJS的异同" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/ES6%E6%A8%A1%E5%9D%97%E5%92%8CCommonJS%E7%9A%84%E5%BC%82%E5%90%8C/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="JavaScript面试" scheme="http://example.com/tags/JavaScript%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端白屏时间长的原因有哪些，怎么优化</title>
+    <link href="http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E7%99%BD%E5%B1%8F%E6%97%B6%E9%97%B4/"/>
+    <id>http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E7%99%BD%E5%B1%8F%E6%97%B6%E9%97%B4/</id>
+    <published>2024-11-09T01:38:25.005Z</published>
+    <updated>2024-11-09T01:50:21.883Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;白屏时间&quot;&gt;&lt;a href=&quot;#白屏时间&quot; class=&quot;headerlink&quot; title=&quot;白屏时间&quot;&gt;&lt;/a&gt;白屏时间&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;空白-&amp;gt;显示第一个画面时间&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JavaScript" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
+    
+    <category term="前端白屏时间长的原因有哪些，怎么优化" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/%E5%89%8D%E7%AB%AF%E7%99%BD%E5%B1%8F%E6%97%B6%E9%97%B4%E9%95%BF%E7%9A%84%E5%8E%9F%E5%9B%A0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%8C%E6%80%8E%E4%B9%88%E4%BC%98%E5%8C%96/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="JavaScript面试" scheme="http://example.com/tags/JavaScript%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何提取url的参数</title>
+    <link href="http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8F%96url%E7%9A%84%E5%8F%82%E6%95%B0/"/>
+    <id>http://example.com/2024/11/09/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8F%96url%E7%9A%84%E5%8F%82%E6%95%B0/</id>
+    <published>2024-11-09T01:15:04.123Z</published>
+    <updated>2024-11-09T01:18:55.385Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JavaScript" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
+    
+    <category term="如何提取url的参数" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JavaScript/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8F%96url%E7%9A%84%E5%8F%82%E6%95%B0/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="JavaScript面试" scheme="http://example.com/tags/JavaScript%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>状态压缩动态规划</title>
+    <link href="http://example.com/2024/10/26/leetcode/dynamic-programming/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <id>http://example.com/2024/10/26/leetcode/dynamic-programming/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</id>
+    <published>2024-10-26T04:35:55.778Z</published>
+    <updated>2024-10-26T04:38:48.692Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;状态压缩动态规划&quot;&gt;&lt;a href=&quot;#状态压缩动态规划&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="状态压缩动态规划" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最长公共子序列</title>
+    <link href="http://example.com/2024/10/26/leetcode/dynamic-programming/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/"/>
+    <id>http://example.com/2024/10/26/leetcode/dynamic-programming/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/</id>
+    <published>2024-10-26T02:46:36.001Z</published>
+    <updated>2024-10-26T04:26:25.981Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;给定序列 X&amp;#x3D;{x1,xn},序列 Z{z1,zn},是 X</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="最长公共子序列" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>旅行商问题</title>
+    <link href="http://example.com/2024/10/26/leetcode/dynamic-programming/%E6%97%85%E8%A1%8C%E5%95%86%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2024/10/26/leetcode/dynamic-programming/%E6%97%85%E8%A1%8C%E5%95%86%E9%97%AE%E9%A2%98/</id>
+    <published>2024-10-26T02:05:37.929Z</published>
+    <updated>2024-10-26T02:44:45.858Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;G &amp;#x3D; (V,E) 是一个带权重的完全图，顶点个数|v| &amp;#x3D;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="旅行商问题" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%97%85%E8%A1%8C%E5%95%86%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>0-1背包问题</title>
+    <link href="http://example.com/2024/10/20/leetcode/dynamic-programming/0-1%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2024/10/20/leetcode/dynamic-programming/0-1%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</id>
+    <published>2024-10-20T13:21:26.847Z</published>
+    <updated>2024-10-20T14:15:20.787Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;给定 n 种物品和一背包。物品 i 的重量是 wi，其价值为 vi，背包容量为</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="0-1背包问题" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/0-1%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最大子数组问题</title>
+    <link href="http://example.com/2024/10/20/leetcode/dynamic-programming/%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2024/10/20/leetcode/dynamic-programming/%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/</id>
+    <published>2024-10-20T12:46:26.548Z</published>
+    <updated>2024-10-20T13:12:25.811Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;给定一个数组</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="最大子数组问题" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动态规划的基础</title>
+    <link href="http://example.com/2024/10/20/leetcode/dynamic-programming/base/"/>
+    <id>http://example.com/2024/10/20/leetcode/dynamic-programming/base/</id>
+    <published>2024-10-20T12:14:45.275Z</published>
+    <updated>2024-10-20T12:44:00.457Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基本性质&quot;&gt;&lt;a href=&quot;#基本性质&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="动态规划" scheme="http://example.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>棋盘覆盖问题</title>
+    <link href="http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%A3%8B%E7%9B%98%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%A3%8B%E7%9B%98%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/</id>
+    <published>2024-10-20T10:23:16.015Z</published>
+    <updated>2024-10-20T11:32:51.081Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;在一个 2^k×2^k</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="分治法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+    <category term="棋盘覆盖问题" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%88%86%E6%B2%BB%E6%B3%95/%E6%A3%8B%E7%9B%98%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="分治法" scheme="http://example.com/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最近点对问题</title>
+    <link href="http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%9C%80%E8%BF%91%E7%82%B9%E5%AF%B9%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%9C%80%E8%BF%91%E7%82%B9%E5%AF%B9%E9%97%AE%E9%A2%98/</id>
+    <published>2024-10-20T09:16:39.768Z</published>
+    <updated>2024-10-20T09:21:22.329Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;给定屏幕上的点对 S，|S|&amp;#x3D;n,每个点可用坐标（x，y）表示，若</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="分治法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+    <category term="最近点对问题" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%88%86%E6%B2%BB%E6%B3%95/%E6%9C%80%E8%BF%91%E7%82%B9%E5%AF%B9%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="分治法" scheme="http://example.com/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>寻找第k小元素</title>
+    <link href="http://example.com/2024/10/20/leetcode/divide-and-conquer/%E5%AF%BB%E6%89%BE%E7%AC%ACk%E5%B0%8F%E5%85%83%E7%B4%A0/"/>
+    <id>http://example.com/2024/10/20/leetcode/divide-and-conquer/%E5%AF%BB%E6%89%BE%E7%AC%ACk%E5%B0%8F%E5%85%83%E7%B4%A0/</id>
+    <published>2024-10-20T06:59:06.621Z</published>
+    <updated>2024-10-20T09:17:20.510Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;给定一个无序数组 S &amp;#x3D; [s1,s2,…sk,…sn],输出数组的第 k</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="分治法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+    <category term="寻找第k小元素" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%88%86%E6%B2%BB%E6%B3%95/%E5%AF%BB%E6%89%BE%E7%AC%ACk%E5%B0%8F%E5%85%83%E7%B4%A0/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="分治法" scheme="http://example.com/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分治法基本内容</title>
+    <link href="http://example.com/2024/10/20/leetcode/divide-and-conquer/base/"/>
+    <id>http://example.com/2024/10/20/leetcode/divide-and-conquer/base/</id>
+    <published>2024-10-20T06:31:07.002Z</published>
+    <updated>2024-10-20T06:31:07.002Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基本思想&quot;&gt;&lt;a href=&quot;#基本思想&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="分治法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="分治法" scheme="http://example.com/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最大子数组问题</title>
+    <link href="http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2024/10/20/leetcode/divide-and-conquer/%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/</id>
+    <published>2024-10-20T06:31:07.000Z</published>
+    <updated>2024-10-20T06:31:07.001Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;给定一个数组</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="分治法" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+    <category term="最大子数组问题" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/%E7%AE%97%E6%B3%95/%E5%88%86%E6%B2%BB%E6%B3%95/%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="分治法" scheme="http://example.com/tags/%E5%88%86%E6%B2%BB%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【tinymce】tinymce的media设置，解决视频不能选中删除bug</title>
+    <link href="http://example.com/2024/08/03/tools/tinymce/tinymce%20media/"/>
+    <id>http://example.com/2024/08/03/tools/tinymce/tinymce%20media/</id>
+    <published>2024-08-03T10:50:30.125Z</published>
+    <updated>2024-08-03T11:11:27.672Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;媒体插件为用户增加了将 HTML5</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="tinymce" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/tinymce/"/>
+    
+    <category term="tools" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/tinymce/tools/"/>
+    
+    
+    <category term="前端" scheme="http://example.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="tinymce" scheme="http://example.com/tags/tinymce/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【tinymce】之图片上传</title>
+    <link href="http://example.com/2024/08/03/tools/tinymce/image/"/>
+    <id>http://example.com/2024/08/03/tools/tinymce/image/</id>
+    <published>2024-08-03T10:15:11.768Z</published>
+    <updated>2024-08-03T10:50:51.715Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="tinymce" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/tinymce/"/>
+    
+    <category term="tools" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/tinymce/tools/"/>
+    
+    
+    <category term="前端" scheme="http://example.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="tinymce" scheme="http://example.com/tags/tinymce/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 011：盛最多水的容器</title>
+    <link href="http://example.com/2023/12/17/leetcode/Array/LeetCode%20011%EF%BC%9A%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/"/>
+    <id>http://example.com/2023/12/17/leetcode/Array/LeetCode%20011%EF%BC%9A%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</id>
+    <published>2023-12-17T08:32:28.608Z</published>
+    <updated>2023-12-17T08:34:00.373Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;题目地址&quot;&gt;&lt;a href=&quot;#题目地址&quot; class=&quot;headerlink&quot; title=&quot;题目地址&quot;&gt;&lt;/a&gt;题目地址&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="leetcode" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/leetcode/"/>
+    
+    <category term="020盛最多水的容器" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/leetcode/020%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/"/>
+    
+    
+    <category term="leetcode" scheme="http://example.com/tags/leetcode/"/>
+    
+    <category term="数组" scheme="http://example.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
+  
+</feed>
