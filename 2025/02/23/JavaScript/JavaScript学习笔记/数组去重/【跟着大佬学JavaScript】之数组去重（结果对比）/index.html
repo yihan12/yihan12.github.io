@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>【跟着大佬学JavaScript】之数组去重（结果对比） | 易函123</title><meta name="author" content="易函123"><meta name="copyright" content="易函123"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="前言数组去重在面试和工作中都是比较容易见到的问题。 这篇文章主要是来测试多个方法，对下面这个数组的去重结果进行分析讨论。如果有不对的地方，还请大家指出。 1const arr &#x3D; [ 1, 1, &quot;1&quot;, &quot;1&quot;, 0, 0, &quot;0&quot;, &quot;0&quot;, true, false, &quot;true&quot;, &amp;quot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【跟着大佬学JavaScript】之数组去重（结果对比）">
+<meta property="og:url" content="http://example.com/2025/02/23/JavaScript/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/%E3%80%90%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6JavaScript%E3%80%91%E4%B9%8B%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%EF%BC%88%E7%BB%93%E6%9E%9C%E5%AF%B9%E6%AF%94%EF%BC%89/index.html">
+<meta property="og:site_name" content="易函123">
+<meta property="og:description" content="前言数组去重在面试和工作中都是比较容易见到的问题。 这篇文章主要是来测试多个方法，对下面这个数组的去重结果进行分析讨论。如果有不对的地方，还请大家指出。 1const arr &#x3D; [ 1, 1, &quot;1&quot;, &quot;1&quot;, 0, 0, &quot;0&quot;, &quot;0&quot;, true, false, &quot;true&quot;, &amp;quot">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/avatar.jpeg">
+<meta property="article:published_time" content="2025-02-23T06:00:04.241Z">
+<meta property="article:modified_time" content="2025-02-23T06:00:04.241Z">
+<meta property="article:author" content="易函123">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/avatar.jpeg"><link rel="shortcut icon" href="/images/favicon.jpeg"><link rel="canonical" href="http://example.com/2025/02/23/JavaScript/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/%E3%80%90%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6JavaScript%E3%80%91%E4%B9%8B%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%EF%BC%88%E7%BB%93%E6%9E%9C%E5%AF%B9%E6%AF%94%EF%BC%89/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?80da4761d181e925002b9e42bf38d64d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【跟着大佬学JavaScript】之数组去重（结果对比）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-02-23 14:00:04'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="易函123" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">71</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/bg.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="易函123"><img class="site-icon" src="/images/avatar.jpeg"/><span class="site-name">易函123</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【跟着大佬学JavaScript】之数组去重（结果对比）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-23T06:00:04.241Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-23T06:00:04.241Z" title="更新于 2025-02-23 14:00:04">2025-02-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/">JavaScript</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/JavaScript%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/">JavaScript深入理解</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/JavaScript%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/">数组去重</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【跟着大佬学JavaScript】之数组去重（结果对比）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>数组去重在面试和工作中都是比较容易见到的问题。</p>
+<p>这篇文章主要是来测试多个方法，对下面这个数组的去重结果进行分析讨论。如果有不对的地方，还请大家指出。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const arr = [ 1, 1, &quot;1&quot;, &quot;1&quot;, 0, 0, &quot;0&quot;, &quot;0&quot;, true, false, &quot;true&quot;, &quot;false&quot;, &quot;a&quot;, &quot;A&quot;, undefined, undefined, &quot;undefined&quot;, null, null, &#x27;null&#x27;, NaN, NaN, +0, -0, new String(&quot;1&quot;), new String(&quot;1&quot;), Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], [] ];</span><br></pre></td></tr></table></figure>
+
+<h2 id="特殊类型"><a href="#特殊类型" class="headerlink" title="特殊类型"></a>特殊类型</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">console.log(1 == &quot;1&quot;); // true</span><br><span class="line">console.log(1 === &quot;1&quot;); // false</span><br><span class="line"></span><br><span class="line">console.log(0 == &quot;0&quot;); // true</span><br><span class="line">console.log(0 === &quot;0&quot;); // false</span><br><span class="line"></span><br><span class="line">console.log(0 == +0); // true</span><br><span class="line">console.log(0 === +0); // true</span><br><span class="line"></span><br><span class="line">console.log(0 == -0); // true</span><br><span class="line">console.log(0 === -0); // true</span><br><span class="line"></span><br><span class="line">console.log(+0 == -0); // true</span><br><span class="line">console.log(+0 === -0); // true</span><br><span class="line"></span><br><span class="line">console.log(0 == false); // true</span><br><span class="line">console.log(0 === false); // false</span><br><span class="line"></span><br><span class="line">console.log(0 == undefined); // false</span><br><span class="line">console.log(0 === undefined); // false</span><br><span class="line"></span><br><span class="line">console.log(0 == null); // false</span><br><span class="line">console.log(0 === null); // false</span><br><span class="line"></span><br><span class="line">console.log(1 == true); // true</span><br><span class="line">console.log(1 === true); // false</span><br><span class="line"></span><br><span class="line">console.log(undefined == null); // true</span><br><span class="line">console.log(undefined === null); // false</span><br><span class="line"></span><br><span class="line">console.log(NaN == NaN); // false</span><br><span class="line">console.log(NaN === NaN); // false</span><br><span class="line"></span><br><span class="line">console.log(new String(&quot;1&quot;) == new String(&quot;1&quot;)); // false</span><br><span class="line">console.log(new String(&quot;1&quot;) === new String(&quot;1&quot;)); // false</span><br><span class="line">Object.prototype.toString.call(new String(&#x27;1&#x27;)) // &#x27;[object String]&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(/a/ == /a/); // false</span><br><span class="line">console.log(/a/ === /a/); // false</span><br><span class="line">Object.prototype.toString.call(/a/); //&#x27;[object RegExp]&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(Symbol(1) == Symbol(1)); // false</span><br><span class="line">console.log(Symbol(1) === Symbol(1)); // false</span><br><span class="line"></span><br><span class="line">console.log(&#123;&#125; == &#123;&#125;); // false</span><br><span class="line">console.log(&#123;&#125; === &#123;&#125;); // false</span><br><span class="line"></span><br><span class="line">console.log([] == []); // false</span><br><span class="line">console.log([] === []); // false</span><br></pre></td></tr></table></figure>
+
+<p>接下来，我们看看下面多个去重方法，对以上特殊类型的去重效果。</p>
+<h2 id="代码一（暴力解法）"><a href="#代码一（暴力解法）" class="headerlink" title="代码一（暴力解法）"></a>代码一（暴力解法）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// 暴力解法一</span><br><span class="line"></span><br><span class="line">function unique(array) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      console.log(&quot;type error!&quot;);</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line">    const res = [array[0]];</span><br><span class="line">    let arrLen = array.length;</span><br><span class="line">    let resLen = res.length;</span><br><span class="line"></span><br><span class="line">    for (let i = 0; i &lt; arrLen; i++) &#123;</span><br><span class="line">      let flag = true;</span><br><span class="line">      for (let j = 0; j &lt; resLen; j++) &#123;</span><br><span class="line">        if (array[i] === res[j]) &#123;</span><br><span class="line">          flag = false;</span><br><span class="line">          break;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      if (flag) &#123;</span><br><span class="line">        res.push(array[i]);</span><br><span class="line">        resLen = res.length;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line">// [1, &#x27;1&#x27;, 0, &#x27;0&#x27;, true, false, &#x27;true&#x27;, &#x27;false&#x27;, &#x27;a&#x27;, &#x27;A&#x27;, undefined, &#x27;undefined&#x27;, null, &#x27;null&#x27;, NaN, NaN, String &#123;&#x27;1&#x27;&#125;, String &#123;&#x27;1&#x27;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, &#x27;1&#x27;, 0, &#x27;0&#x27;, true, false, &#x27;true&#x27;, &#x27;false&#x27;, &#x27;a&#x27;, &#x27;A&#x27;, undefined, &#x27;undefined&#x27;, null, &#x27;null&#x27;, NaN, NaN, String &#123;&#x27;1&#x27;&#125;, String &#123;&#x27;1&#x27;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出结果说明：</strong></p>
+<ol>
+<li>去重<code>+0</code>、<code>-0</code>、<code>0</code></li>
+<li><code>NaN</code>不去重</li>
+<li>对象<code>new String(&quot;1&quot;)</code>、<code>/a/</code>、<code>&#123;&#125;</code>不去重</li>
+<li>数组<code>[]</code>不去重</li>
+<li><code>Symbol(1)</code>不去重</li>
+</ol>
+<p>暴力解法，简单易理解，兼容性好。去重结果如上所示。</p>
+<h2 id="代码二（ES6）"><a href="#代码二（ES6）" class="headerlink" title="代码二（ES6）"></a>代码二（ES6）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">// ES6 Array.from + Set 方法一</span><br><span class="line">function unique(array) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      console.log(&#x27;type error!&#x27;)</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    return Array.from(new Set(array))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ES6 点运算 + Set 方法二</span><br><span class="line">function unique1(array) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      console.log(&#x27;type error!&#x27;)</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    return [...new Set(arr)]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ES6 箭头函数 + 点运算 + Set 方法三</span><br><span class="line">const unique2 = (array) =&gt; &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      console.log(&#x27;type error!&#x27;)</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    return [...new Set(arr)]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ES6 Map + ES5 filter  方法四</span><br><span class="line">function unique3(array) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      console.log(&#x27;type error!&#x27;)</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    const seen = new Map()</span><br><span class="line">    return array.filter((a) =&gt; !seen.has(a) &amp;&amp; seen.set(a, 1))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, &#x27;1&#x27;, 0, &#x27;0&#x27;, true, false, &#x27;true&#x27;, &#x27;false&#x27;, &#x27;a&#x27;, &#x27;A&#x27;, undefined, &#x27;undefined&#x27;, null, &#x27;null&#x27;, NaN, String &#123;&#x27;1&#x27;&#125;, String &#123;&#x27;1&#x27;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出结果说明：</strong></p>
+<ol>
+<li>去重<code>+0</code>、<code>-0</code>、<code>0</code></li>
+<li>去重<code>NaN</code></li>
+<li>对象<code>new String(&quot;1&quot;)</code>、<code>/a/</code>、<code>&#123;&#125;</code>不去重</li>
+<li>数组<code>[]</code>不去重</li>
+<li><code>Symbol(1)</code>不去重</li>
+</ol>
+<h3 id="代码三（indexOf-forEach）"><a href="#代码三（indexOf-forEach）" class="headerlink" title="代码三（indexOf + forEach）"></a>代码三（indexOf + forEach）</h3><blockquote>
+<p>利用 indexOf 检测元素在新数组是否存在</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// indexOf + forEach 利用indexOf检测元素在新数组是否存在</span><br><span class="line">function unique(array) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">        console.log(&#x27;type error!&#x27;)</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line">    const newArr = [];</span><br><span class="line">    array.forEach((el) =&gt; &#123;</span><br><span class="line">      if (newArr.indexOf(el) === -1) &#123;</span><br><span class="line">        newArr.push(el);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    return newArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, &#x27;1&#x27;, 0, &#x27;0&#x27;, true, false, &#x27;true&#x27;, &#x27;false&#x27;, &#x27;a&#x27;, &#x27;A&#x27;, undefined, &#x27;undefined&#x27;, null, &#x27;null&#x27;, NaN, NaN, String &#123;&#x27;1&#x27;&#125;, String &#123;&#x27;1&#x27;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出结果说明：</strong></p>
+<ol>
+<li>去重<code>+0</code>、<code>-0</code>、<code>0</code></li>
+<li><code>NaN</code>不去重</li>
+<li>对象<code>new String(&quot;1&quot;)</code>、<code>/a/</code>、<code>&#123;&#125;</code>不去重</li>
+<li>数组<code>[]</code>不去重</li>
+<li><code>Symbol(1)</code>不去重</li>
+</ol>
+<h3 id="代码四（indexOf-filter）"><a href="#代码四（indexOf-filter）" class="headerlink" title="代码四（indexOf + filter）"></a>代码四（indexOf + filter）</h3><blockquote>
+<p>利用 indexOf 检测元素在数组中第一次出现的位置是否和元素现在的位置相等</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// indexOf + forEach 利用indexOf检测元素在新数组是否存在</span><br><span class="line">function unique(array) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">        console.log(&#x27;type error!&#x27;)</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line">    return array.filter((item, index) =&gt; &#123;</span><br><span class="line">        return array.indexOf(item) === index;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log([NaN].indexOf(NaN)); // -1</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, &#x27;1&#x27;, 0, &#x27;0&#x27;, true, false, &#x27;true&#x27;, &#x27;false&#x27;, &#x27;a&#x27;, &#x27;A&#x27;, undefined, &#x27;undefined&#x27;, null, &#x27;null&#x27;, String &#123;&#x27;1&#x27;&#125;, String &#123;&#x27;1&#x27;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出结果说明：</strong></p>
+<ol>
+<li>去重<code>+0</code>、<code>-0</code>、<code>0</code></li>
+<li><strong>两个<code>NaN</code>都会被删除</strong></li>
+<li>对象<code>new String(&quot;1&quot;)</code>、<code>/a/</code>、<code>&#123;&#125;</code>不去重</li>
+<li>数组<code>[]</code>不去重</li>
+<li><code>Symbol(1)</code>不去重</li>
+</ol>
+<p><strong>重点：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log([NaN].indexOf(NaN)); // -1</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码五（sort-排序，不支持-Symbol）"><a href="#代码五（sort-排序，不支持-Symbol）" class="headerlink" title="代码五（sort 排序，不支持 Symbol）"></a>代码五（sort 排序，不支持 Symbol）</h2><blockquote>
+<p>sort()方法主要是用于对数组进行排序，默认情况下该方法是将数组元素转换成字符串，然后按照 ASC 码进行排序</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// sort()方法不支持Symbol，Symbol不支持转换成字符串</span><br><span class="line">function unique(array) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      console.log(&quot;type error!&quot;);</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line">    const sortArr = array.sort();</span><br><span class="line">    const newArr = [];</span><br><span class="line">    sortArr.forEach((el, i) =&gt; &#123;</span><br><span class="line">      if (sortArr[i] !== sortArr[i - 1]) &#123;</span><br><span class="line">        newArr.push(el);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    return newArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[], [], /a/, /a/, 0, &quot;0&quot;, 0, 1, &quot;1&quot;, String &#123;&#x27;1&#x27;&#125;, String &#123;&#x27;1&#x27;&#125;, &quot;A&quot;, NaN, NaN, &#123;&#125;, &#123;&#125;, &quot;a&quot;, false, &quot;false&quot;, null, &quot;null&quot;, true, &quot;true&quot;, &quot;undefined&quot;, undefined]</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出结果说明：</strong></p>
+<ol>
+<li><code>+0</code>、<code>-0</code>、<code>0</code>、<code>&quot;0&quot;</code>位置不同会导致去重不了</li>
+<li><code>NaN</code>不去重</li>
+<li>对象<code>new String(&quot;1&quot;)</code>、<code>/a/</code>、<code>&#123;&#125;</code>不去重</li>
+<li>数组<code>[]</code>不去重</li>
+<li><strong>sort()方法不支持处理含有<code>Symbol</code>的数组</strong></li>
+</ol>
+<h2 id="代码六（includes）"><a href="#代码六（includes）" class="headerlink" title="代码六（includes）"></a>代码六（includes）</h2><blockquote>
+<p>利用 includes()方法检查新数组是否包含原数组的每一项</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 利用includes()方法检查新数组是否包含原数组的每一项</span><br><span class="line">function unique(array) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      console.log(&quot;type error!&quot;);</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const newArr = [];</span><br><span class="line">    array.forEach((el) =&gt; &#123;</span><br><span class="line">      newArr.includes(el) ? newArr : newArr.push(el);</span><br><span class="line">    &#125;);</span><br><span class="line">    return newArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, &#x27;1&#x27;, 0, &#x27;0&#x27;, true, false, &#x27;true&#x27;, &#x27;false&#x27;, &#x27;a&#x27;, &#x27;A&#x27;, undefined, &#x27;undefined&#x27;, null, &#x27;null&#x27;, NaN, String &#123;&#x27;1&#x27;&#125;, String &#123;&#x27;1&#x27;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出结果说明：</strong></p>
+<ol>
+<li>去重<code>+0</code>、<code>-0</code>、<code>0</code></li>
+<li>去重<code>NaN</code></li>
+<li>对象<code>new String(&quot;1&quot;)</code>、<code>/a/</code>、<code>&#123;&#125;</code>不去重</li>
+<li>数组<code>[]</code>不去重</li>
+<li><code>Symbol</code>不去重</li>
+</ol>
+<h2 id="代码七（includes-reduce）"><a href="#代码七（includes-reduce）" class="headerlink" title="代码七（includes+reduce）"></a>代码七（includes+reduce）</h2><blockquote>
+<p>利用 includes()方法检查新数组是否包含原数组的每一项</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 利用includes()方法检查新数组是否包含原数组的每一项</span><br><span class="line">function unique(array) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      console.log(&quot;type error!&quot;);</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return array.reduce((pre, cur) =&gt; &#123;</span><br><span class="line">      !pre.includes(cur) &amp;&amp; pre.push(cur);</span><br><span class="line">      return pre;</span><br><span class="line">    &#125;, []);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, &#x27;1&#x27;, 0, &#x27;0&#x27;, true, false, &#x27;true&#x27;, &#x27;false&#x27;, &#x27;a&#x27;, &#x27;A&#x27;, undefined, &#x27;undefined&#x27;, null, &#x27;null&#x27;, NaN, String &#123;&#x27;1&#x27;&#125;, String &#123;&#x27;1&#x27;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出结果说明：</strong></p>
+<ol>
+<li>去重<code>+0</code>、<code>-0</code>、<code>0</code></li>
+<li>去重<code>NaN</code></li>
+<li>对象<code>new String(&quot;1&quot;)</code>、<code>/a/</code>、<code>&#123;&#125;</code>不去重</li>
+<li>数组<code>[]</code>不去重</li>
+<li><code>Symbol</code>不去重</li>
+</ol>
+<h2 id="代码八（对象-key）"><a href="#代码八（对象-key）" class="headerlink" title="代码八（对象 key）"></a>代码八（对象 key）</h2><blockquote>
+<p>利用了对象的 key 不可以重复的特性来进行去重</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 利用了对象的key不可以重复的特性来进行去重</span><br><span class="line">function unique(array) &#123;</span><br><span class="line">    if (!Array.isArray(array)) &#123;</span><br><span class="line">      console.log(&quot;type error!&quot;);</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const obj = &#123;&#125;;</span><br><span class="line">    const newArr = [];</span><br><span class="line">    array.forEach((val) =&gt; &#123;</span><br><span class="line">      if (!obj[typeof val + JSON.stringify(val)]) &#123;</span><br><span class="line">        // 将对象序列化之后作为key来使用</span><br><span class="line">        obj[typeof val + JSON.stringify(val)] = 1;</span><br><span class="line">        newArr.push(val);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    return newArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, &#x27;1&#x27;, 0, &#x27;0&#x27;, true, false, &#x27;true&#x27;, &#x27;false&#x27;, &#x27;a&#x27;, &#x27;A&#x27;, undefined, &#x27;undefined&#x27;, null, &#x27;null&#x27;, NaN, String &#123;&#x27;1&#x27;&#125;, Symbol(1), &#123;&#125;, []]</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出结果说明：</strong></p>
+<ol>
+<li>去重<code>+0</code>、<code>-0</code>、<code>0</code></li>
+<li><strong>去重<code>NaN</code></strong></li>
+<li><strong>去重对象<code>new String(&quot;1&quot;)</code>、<code>&#123;&#125;</code>;两个<code>/a/</code>全部被删除了</strong></li>
+<li><strong>去重数组<code>[]</code></strong></li>
+<li><strong>去重<code>Symbol</code></strong></li>
+</ol>
+<p><strong>将不该去重的<code>Symbol</code>去重了;将两个<code>/a/</code>全部删除了</strong></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>结果</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>for 循环暴力解法</strong></td>
+<td><code>[1, &#39;1&#39;, 0, &#39;0&#39;, true, false, &#39;true&#39;, &#39;false&#39;, &#39;a&#39;, &#39;A&#39;, undefined, &#39;undefined&#39;, null, &#39;null&#39;, NaN, NaN, String &#123;&#39;1&#39;&#125;, String &#123;&#39;1&#39;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</code></td>
+<td>1.去重+0、-0、0； 2.NaN 不去重；3.对象 new String(“1”)、&#x2F;a&#x2F;、{}不去重；4.数组[]不去重；5.Symbol(1)不去重；</td>
+</tr>
+<tr>
+<td><strong>ES6 解法</strong></td>
+<td><code>[1, &#39;1&#39;, 0, &#39;0&#39;, true, false, &#39;true&#39;, &#39;false&#39;, &#39;a&#39;, &#39;A&#39;, undefined, &#39;undefined&#39;, null, &#39;null&#39;, NaN, String &#123;&#39;1&#39;&#125;, String &#123;&#39;1&#39;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []</code></td>
+<td>1.去重+0、-0、0； 2.去重 NaN；3.对象 new String(“1”)、&#x2F;a&#x2F;、{}不去重；4.数组[]不去重；5.Symbol(1)不去重；</td>
+</tr>
+<tr>
+<td><strong>indexOf + forEach</strong></td>
+<td><code>[1, &#39;1&#39;, 0, &#39;0&#39;, true, false, &#39;true&#39;, &#39;false&#39;, &#39;a&#39;, &#39;A&#39;, undefined, &#39;undefined&#39;, null, &#39;null&#39;, NaN, NaN, String &#123;&#39;1&#39;&#125;, String &#123;&#39;1&#39;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</code></td>
+<td>1.去重+0、-0、0； 2.NaN 不去重；3.对象 new String(“1”)、&#x2F;a&#x2F;、{}不去重；4.数组[]不去重；5.Symbol(1)不去重；</td>
+</tr>
+<tr>
+<td><strong>indexOf + filter</strong></td>
+<td><code>[1, &#39;1&#39;, 0, &#39;0&#39;, true, false, &#39;true&#39;, &#39;false&#39;, &#39;a&#39;, &#39;A&#39;, undefined, &#39;undefined&#39;, null, &#39;null&#39;, String &#123;&#39;1&#39;&#125;, String &#123;&#39;1&#39;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</code></td>
+<td>1.去重+0、-0、0； 2.两个 NaN 都会被删除；3.对象 new String(“1”)、&#x2F;a&#x2F;、{}不去重；4.数组[]不去重；5.Symbol(1)不去重；</td>
+</tr>
+<tr>
+<td><strong>sort 排序，不支持 Symbol</strong></td>
+<td><code>[[], [], /a/, /a/, 0, &quot;0&quot;, 0, 1, &quot;1&quot;, String &#123;&#39;1&#39;&#125;, String &#123;&#39;1&#39;&#125;, &quot;A&quot;, NaN, NaN, &#123;&#125;, &#123;&#125;, &quot;a&quot;, false, &quot;false&quot;, null, &quot;null&quot;, true, &quot;true&quot;, &quot;undefined&quot;, undefined]</code></td>
+<td>1.+0、-0、0、”0”位置不同会导致去重不了 2.NaN 不去重；3.对象 new String(“1”)、&#x2F;a&#x2F;、{}不去重；4.数组[]不去重；5.sort()方法不支持处理含有 Symbol 的数组；</td>
+</tr>
+<tr>
+<td><strong>includes</strong></td>
+<td><code>[1, &#39;1&#39;, 0, &#39;0&#39;, true, false, &#39;true&#39;, &#39;false&#39;, &#39;a&#39;, &#39;A&#39;, undefined, &#39;undefined&#39;, null, &#39;null&#39;, NaN, String &#123;&#39;1&#39;&#125;, String &#123;&#39;1&#39;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</code></td>
+<td>1.去重+0、-0、0； 2.去重 NaN；3.对象 new String(“1”)、&#x2F;a&#x2F;、{}不去重；4.数组[]不去重；5.Symbol(1)不去重；</td>
+</tr>
+<tr>
+<td><strong>includes+reduce</strong></td>
+<td><code>[1, &#39;1&#39;, 0, &#39;0&#39;, true, false, &#39;true&#39;, &#39;false&#39;, &#39;a&#39;, &#39;A&#39;, undefined, &#39;undefined&#39;, null, &#39;null&#39;, NaN, String &#123;&#39;1&#39;&#125;, String &#123;&#39;1&#39;&#125;, Symbol(1), Symbol(1), &#123;&#125;, &#123;&#125;, /a/, /a/, [], []]</code></td>
+<td>1.去重+0、-0、0； 2.去重 NaN；3.对象 new String(“1”)、&#x2F;a&#x2F;、{}不去重；4.数组[]不去重；5.Symbol(1)不去重；</td>
+</tr>
+<tr>
+<td><strong>对象 key</strong></td>
+<td><code>[1, &#39;1&#39;, 0, &#39;0&#39;, true, false, &#39;true&#39;, &#39;false&#39;, &#39;a&#39;, &#39;A&#39;, undefined, &#39;undefined&#39;, null, &#39;null&#39;, NaN, String &#123;&#39;1&#39;&#125;, Symbol(1), &#123;&#125;, []]</code></td>
+<td>1.去重+0、-0、0； 2.去重 NaN；3.去重对象 new String(“1”)、{};两个&#x2F;a&#x2F;全部被删除了；4.去重数组[]；5.去重 Symbol</td>
+</tr>
+</tbody></table>
+<p>上面只是简单结果的去重总结，具体的去重选择还需要根据我们业务场景来选择去重方法。</p>
+<h2 id="演示地址"><a href="#演示地址" class="headerlink" title="演示地址"></a>演示地址</h2><p>可以去<a target="_blank" rel="noopener" href="https://github.com/yihan12/Blog/tree/main/demos/unique">Github 仓库</a>查看演示代码</p>
+<h2 id="跟着大佬学系列"><a href="#跟着大佬学系列" class="headerlink" title="跟着大佬学系列"></a>跟着大佬学系列</h2><p>主要是日常对每个进阶知识点的摸透，跟着大佬一起去深入了解 JavaScript 的语言艺术。</p>
+<p>后续会一直更新，希望各位看官不要吝啬手中的赞。</p>
+<p>❤️ <strong>感谢各位的支持！！！</strong></p>
+<p>❤️ <strong>如果有错误或者不严谨的地方，请务必给予指正，十分感谢！！！</strong></p>
+<p>❤️ <strong>喜欢或者有所启发，欢迎 star！！！</strong></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903608467587085">解锁多种 JavaScript 数组去重姿势</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903790257111054">数组去重的六种方法</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903602197102605">7 种方法实现数组去重</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mqyqingfeng/Blog/issues/27">JavaScript 专题之数组去重
+</a></li>
+</ul>
+<h2 id="原文地址"><a href="#原文地址" class="headerlink" title="原文地址"></a>原文地址</h2><p><a target="_blank" rel="noopener" href="https://github.com/yihan12/Blog/issues/5">【跟着大佬学 JavaScript】之数组去重（结果对比）</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">易函123</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/02/23/JavaScript/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/%E3%80%90%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6JavaScript%E3%80%91%E4%B9%8B%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%EF%BC%88%E7%BB%93%E6%9E%9C%E5%AF%B9%E6%AF%94%EF%BC%89/">http://example.com/2025/02/23/JavaScript/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/%E3%80%90%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6JavaScript%E3%80%91%E4%B9%8B%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%EF%BC%88%E7%BB%93%E6%9E%9C%E5%AF%B9%E6%AF%94%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">易函123</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaScript/">JavaScript</a></div><div class="post_share"><div class="social-share" data-image="/images/avatar.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/02/23/JavaScript/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/%E3%80%90%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6JavaScript%E3%80%91%E4%B9%8B%E9%98%B2%E6%8A%96/" title="【跟着大佬学JavaScript】之防抖"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【跟着大佬学JavaScript】之防抖</div></div></a></div><div class="next-post pull-right"><a href="/2025/02/23/JavaScript/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/%E3%80%90%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6JavaScript%E3%80%91%E4%B9%8B%E8%8A%82%E6%B5%81/" title="【跟着大佬学JavaScript】之节流"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【跟着大佬学JavaScript】之节流</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2025/02/23/JavaScript/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%90ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E4%B9%8B%20%E5%8F%98%E9%87%8F/" title="【ES6学习笔记】之 变量"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">【ES6学习笔记】之 变量</div></div></a></div><div><a href="/2025/02/23/JavaScript/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%90ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E4%B9%8B%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" title="【ES6学习笔记】之 解构赋值"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">【ES6学习笔记】之 解构赋值</div></div></a></div><div><a href="/2025/02/23/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/JavaScript%E9%9D%A2%E8%AF%95/" title="JavaScript面试汇总"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">JavaScript面试汇总</div></div></a></div><div><a href="/2025/02/23/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/ES6%E6%A8%A1%E5%9D%97%E5%92%8CCommonJS%E7%9A%84%E5%BC%82%E5%90%8C/" title="ES6模块和CommonJS的异同"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">ES6模块和CommonJS的异同</div></div></a></div><div><a href="/2025/02/23/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" title="深浅拷贝"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">深浅拷贝</div></div></a></div><div><a href="/2025/02/23/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8F%96url%E7%9A%84%E5%8F%82%E6%95%B0/" title="如何提取url的参数"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">如何提取url的参数</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">易函123</div><div class="author-info__description">吾生也有涯，而知也无涯 。以有涯随无涯，殆已！已而为知者，殆而已矣！为善无近名，为恶无近刑。缘督以为经，可以保身，可以全生，可以养亲，可以尽年。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">71</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yihan12"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yihan12" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">易函123博客、学习笔记、生活记录的角落。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">特殊类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E4%B8%80%EF%BC%88%E6%9A%B4%E5%8A%9B%E8%A7%A3%E6%B3%95%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">代码一（暴力解法）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E4%BA%8C%EF%BC%88ES6%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">代码二（ES6）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E4%B8%89%EF%BC%88indexOf-forEach%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">代码三（indexOf + forEach）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9B%9B%EF%BC%88indexOf-filter%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">代码四（indexOf + filter）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E4%BA%94%EF%BC%88sort-%E6%8E%92%E5%BA%8F%EF%BC%8C%E4%B8%8D%E6%94%AF%E6%8C%81-Symbol%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">代码五（sort 排序，不支持 Symbol）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%85%AD%EF%BC%88includes%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">代码六（includes）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E4%B8%83%EF%BC%88includes-reduce%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">代码七（includes+reduce）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%85%AB%EF%BC%88%E5%AF%B9%E8%B1%A1-key%EF%BC%89"><span class="toc-number">8.</span> <span class="toc-text">代码八（对象 key）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">9.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA%E5%9C%B0%E5%9D%80"><span class="toc-number">10.</span> <span class="toc-text">演示地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6%E7%B3%BB%E5%88%97"><span class="toc-number">11.</span> <span class="toc-text">跟着大佬学系列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">12.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E6%96%87%E5%9C%B0%E5%9D%80"><span class="toc-number">13.</span> <span class="toc-text">原文地址</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/23/%E6%B5%8F%E8%A7%88%E5%99%A8/%E3%80%90%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%91%E4%B9%8B%E7%BC%93%E5%AD%98/" title="【浏览器】之缓存">【浏览器】之缓存</a><time datetime="2025-02-23T06:00:04.263Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/23/%E6%B5%8F%E8%A7%88%E5%99%A8/%E3%80%90%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%91%E4%B9%8B%E8%B7%A8%E5%9F%9F/" title="【浏览器】之跨域">【浏览器】之跨域</a><time datetime="2025-02-23T06:00:04.263Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/23/%E6%B5%8F%E8%A7%88%E5%99%A8/%20%E3%80%90%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%91%E4%B9%8B%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/" title="【浏览器】之同源策略">【浏览器】之同源策略</a><time datetime="2025-02-23T06:00:04.262Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/23/%E6%B5%8F%E8%A7%88%E5%99%A8/%E3%80%90%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%91%E4%B9%8B%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/" title="【浏览器】之渲染机制">【浏览器】之渲染机制</a><time datetime="2025-02-23T06:00:04.262Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/23/tools/tinymce/image/" title="【tinymce】之图片上传">【tinymce】之图片上传</a><time datetime="2025-02-23T06:00:04.261Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 易函123</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '5feacab0e996a1b7ffe4',
+      clientSecret: '89eadd0ac6a70f0ac354fd7964e83f4687a622b5',
+      repo: 'yihan12.github.io',
+      owner: 'yihan12',
+      admin: ['yihan12'],
+      id: 'bc29d1271c803002a4994ddda6cd49b7',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !true) {
+    if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

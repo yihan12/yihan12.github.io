@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>【ES6学习笔记】之 变量 | 易函123</title><meta name="author" content="易函123"><meta name="copyright" content="易函123"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="概览ES6 新增了两个定义变量的关键字：let 与 const，它们几乎取代了 ES5 定义变量的方式：var。let是新的var,const简单的常量声明。 12345678910111213function f() &amp;#123;  &amp;#123;    let x    &amp;#123;      &#x2F;&#x2F; okay, block scoped name      const x &#x3D; &amp;#x27;sne">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【ES6学习笔记】之 变量">
+<meta property="og:url" content="http://example.com/2025/02/23/JavaScript/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%90ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E4%B9%8B%20%E5%8F%98%E9%87%8F/index.html">
+<meta property="og:site_name" content="易函123">
+<meta property="og:description" content="概览ES6 新增了两个定义变量的关键字：let 与 const，它们几乎取代了 ES5 定义变量的方式：var。let是新的var,const简单的常量声明。 12345678910111213function f() &amp;#123;  &amp;#123;    let x    &amp;#123;      &#x2F;&#x2F; okay, block scoped name      const x &#x3D; &amp;#x27;sne">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/avatar.jpeg">
+<meta property="article:published_time" content="2025-02-23T06:00:04.239Z">
+<meta property="article:modified_time" content="2025-02-23T06:00:04.239Z">
+<meta property="article:author" content="易函123">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="ES6">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/avatar.jpeg"><link rel="shortcut icon" href="/images/favicon.jpeg"><link rel="canonical" href="http://example.com/2025/02/23/JavaScript/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%90ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E4%B9%8B%20%E5%8F%98%E9%87%8F/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?80da4761d181e925002b9e42bf38d64d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【ES6学习笔记】之 变量',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-02-23 14:00:04'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="易函123" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">71</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/bg.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="易函123"><img class="site-icon" src="/images/avatar.jpeg"/><span class="site-name">易函123</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【ES6学习笔记】之 变量</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-23T06:00:04.239Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-23T06:00:04.239Z" title="更新于 2025-02-23 14:00:04">2025-02-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/">JavaScript</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/ES6/">ES6</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/ES6/%E5%8F%98%E9%87%8F/">变量</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【ES6学习笔记】之 变量"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h1><p>ES6 新增了两个定义变量的关键字：<code>let</code> 与 <code>const</code>，它们几乎取代了 ES5 定义变量的方式：<code>var</code>。<code>let</code>是新的<code>var</code>,<code>const</code>简单的常量声明。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">f</span>(<span class="params"></span>) &#123;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">let</span> x</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">// okay, block scoped name</span></span><br><span class="line">      <span class="keyword">const</span> x = <span class="string">&#x27;sneaky&#x27;</span></span><br><span class="line">      <span class="comment">// error, const</span></span><br><span class="line">      x = <span class="string">&#x27;foo&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// error, already declared in block</span></span><br><span class="line">    <span class="keyword">let</span> x = <span class="string">&#x27;inner&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>ES6 之前变量之前存在两个问题：</p>
+<ul>
+<li>JS 没有块级作用域。在 JS 函数中的 var 声明，其作用域是函数体的全部。</li>
+<li>循环内变量过度共享</li>
+</ul>
+<h1 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h1><p><code>let</code>,<code>const</code>创建的变量都是<strong>块级作用域</strong>：它们只存在包围它们的最深代码块中。</p>
+<p>作用域有哪些？</p>
+<ul>
+<li>块级作用域</li>
+<li>函数作用域</li>
+<li>全局作用域</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> tmp = <span class="number">123</span></span><br><span class="line">    <span class="comment">// const tmp = 123;</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(tmp) <span class="comment">// ReferenceError: tmp is not defined</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(tmp) <span class="comment">// ReferenceError: tmp is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>相比之下，<code>var</code>声明的是函数域。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> tmp = <span class="number">123</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(tmp) <span class="comment">// 123</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">func</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(tmp) <span class="comment">// tmp is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>下面的式子更难看出函数作用域与块级作用域的区别</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myFunc</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> number1 = <span class="number">15</span> <span class="comment">// 函数作用域</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> number1 = <span class="number">20</span> <span class="comment">// 块级作用域</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(number1) <span class="comment">// 20</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(number1) <span class="comment">// 15</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">myFunc</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(number1) <span class="comment">// number1 is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>而全局作用域，可以从 JavaScript 程序中的任何位置访问。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number1 = <span class="number">15</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">number1</span>, globalThis.<span class="property">number1</span>, <span class="variable language_">window</span> === globalThis) <span class="comment">// 15 15 true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>面试题：循环中定时器闭包</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i) <span class="comment">//5, 5, 5, 5, 5</span></span><br><span class="line">  &#125;, <span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(i) <span class="comment">//5 i跳出循环体污染外部函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//将var改成let之后</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i) <span class="comment">// 0,1,2,3,4</span></span><br><span class="line">  &#125;, <span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(i) <span class="comment">//i is not defined i无法污染外部函数</span></span><br></pre></td></tr></table></figure>
+
+<p>在 for 循环中使用 var 声明的循环变量，会跳出循环体污染当前的函数。</p>
+<h1 id="TDZ"><a href="#TDZ" class="headerlink" title="TDZ"></a>TDZ</h1><blockquote>
+<p><code>let</code>、<code>const</code>暂时性死区（temporal dead zone）</p>
+</blockquote>
+<p><code>let</code>,<code>const</code>声明的变量拥有<strong>暂时性死区</strong>：当进入它的作用域，它不能被访问（获取或设置）直到执行到达声明。<br>简单描述：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="comment">//这块区域是TDZ</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a) <span class="comment">// Uncaught ReferenceError: Cannot access &#x27;a&#x27; before initialization</span></span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line">  <span class="comment">// const a = 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="comment">// enter new scope, TDZ starts</span></span><br><span class="line">  <span class="comment">// Uninitialized binding for `tmp` is created</span></span><br><span class="line"></span><br><span class="line">  tmp = <span class="string">&#x27;abc&#x27;</span> <span class="comment">// ReferenceError</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(tmp) <span class="comment">// ReferenceError</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> tmp <span class="comment">// TDZ ends, `tmp` is initialized with `undefined`</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(tmp) <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line">  tmp = <span class="number">123</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(tmp) <span class="comment">// 123</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面示例将演示死区（dead zone）是真正短暂时间的（基于时间）和不受空间条件限制（基于位置）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="comment">// enter new scope, TDZ starts</span></span><br><span class="line">  <span class="keyword">const</span> func = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(myVar) <span class="comment">// OK!</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Here we are within the TDZ and</span></span><br><span class="line">  <span class="comment">// accessing `myVar` would cause a `ReferenceError`</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> myVar = <span class="number">3</span> <span class="comment">// TDZ ends</span></span><br><span class="line">  <span class="title function_">func</span>() <span class="comment">// called outside TDZ</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的例子我们可以清楚的看到 let myVar 变量被定义了，但是不像 var 一样被提升。那它初始化了吗？没有，这就是 TDZ 在进入块级作用域就存在的原因。基本上，当 let myVar 将被定义时，它将进入 TDZ，并在您声明和初始化它时结束。所以在范围中，它将首先在 TDZ 中，但是一旦到达声明部分，TDZ 就会结束。</p>
+<h4 id="为什么会存在-TDZ"><a href="#为什么会存在-TDZ" class="headerlink" title="为什么会存在 TDZ?"></a>为什么会存在 TDZ?</h4><ul>
+<li>它帮助我们发现错误。</li>
+<li>在声明变量之前尝试访问它是错误的方式。</li>
+</ul>
+<blockquote>
+<p>为避免 TDZ，请始终确保在任何范围的顶部定义 let 和 const。</p>
+</blockquote>
+<p>我们可以通过分解来简单地理解这个术语。时间意味着暂时的东西，死亡意味着没有生命的状态，编程世界中与内存相关的区域。所以变量暂时不可用（或死亡）的时区在 TDZ 中。</p>
+<p>或者简单地说，进入块级作用域与其变量创建声明之间的时间跨度称为时间死区。</p>
+<h1 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h1><blockquote>
+<p><code>var</code>变量提升</p>
+</blockquote>
+<p>JavaScript 中，我们通常说的作用域是函数作用域，使用 var 声明的变量，无论是在代码的哪个地方声明的，都会提升到当前作用域的最顶部，这种行为叫做<strong>变量提升（Hoisting）</strong></p>
+<p>下面代码，演示了函数的变量提升：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// Enter a new scope</span></span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">foo</span>()) <span class="comment">// hello, due to hoisting</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;hello&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>也就是说，如果在函数内部声明的变量，都会被提升到函数开头，而在全局的声明，就会提升到全局作用域的顶部。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;1: &#x27;</span>, a) <span class="comment">//undefined</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;3: &#x27;</span>, a) <span class="comment">//undefined</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>()</span><br></pre></td></tr></table></figure>
+
+<p>实际执行时，上面的代码中的变量 a 会提升到函数顶部声明，即使 if 语句的条件是 false，也一样不影响 a 的提升。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> a</span><br><span class="line">  <span class="comment">//a声明没有赋值</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;1: &#x27;</span>, a) <span class="comment">//undefined</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">false</span>) &#123;</span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//a声明没有赋值</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;3: &#x27;</span>, a) <span class="comment">//undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在嵌套函数的情况，变量只会提升到最近一个函数的顶部，而不会到外部函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//b提升到函数a顶部，但不会提升到函数test。</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">a</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">false</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> b = <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;b: &#x27;</span>, b)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>() <span class="comment">//b is not defined</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h1><blockquote>
+<p><code>let</code>不允许重复声明</p>
+</blockquote>
+<p><code>let</code>不允许在相同作用域内，重复声明同一个变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">10</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">10</span></span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因此在函数内部不能重新声明函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">arg</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> arg</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">func</span>() <span class="comment">// 报错 Identifier &#x27;arg&#x27; has already been declared</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">arg</span>) &#123;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">let</span> arg</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">func</span>() <span class="comment">// 不报错</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="const-命令"><a href="#const-命令" class="headerlink" title="const 命令"></a>const 命令</h1><blockquote>
+<p>const 声明一个只读的常量。一旦声明，常量的值就不能改变。</p>
+</blockquote>
+<p>一般使用场景：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="string">&#x27;hi all&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">getName</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;jelly&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> conf = &#123;</span><br><span class="line">  <span class="attr">fav</span>: <span class="string">&#x27;Coding&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模板</span></span><br><span class="line"><span class="keyword">const</span> msg = <span class="string">`<span class="subst">$&#123;start&#125;</span>, my name is <span class="subst">$&#123;getName()&#125;</span>, <span class="subst">$&#123;conf.fav&#125;</span> is my favourite`</span></span><br></pre></td></tr></table></figure>
+
+<p>你可能不知道的事：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 与引号混用</span></span><br><span class="line"><span class="keyword">const</span> wantToSay = <span class="string">`I&#x27;m a &quot;tbfed&quot;`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 支持多行文本</span></span><br><span class="line"><span class="keyword">const</span> slogan = <span class="string">`</span></span><br><span class="line"><span class="string">I have a dream today!</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 比较适合写HTML</span></span><br><span class="line"><span class="keyword">const</span> resultTpl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;section&gt;</span></span><br><span class="line"><span class="string">    &lt;div&gt;...&lt;/div&gt;</span></span><br><span class="line"><span class="string">  &lt;/section&gt;</span></span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在 JavaScript 中，const 仅表示绑定（变量名和变量值之间的关联）是不可变的。值本身可能是可变的，如以下示例中的 obj。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">prop</span>: <span class="number">0</span> &#125;</span><br><span class="line">obj.<span class="property">prop</span> = obj.<span class="property">prop</span> + <span class="number">1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="property">prop</span>) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="全局变量和全局对象"><a href="#全局变量和全局对象" class="headerlink" title="全局变量和全局对象"></a>全局变量和全局对象</h1><p>在 Web 浏览器中，唯一直接位于该范围内的位置是脚本的顶层。全局范围的变量称为全局变量，可以随处访问。有两种全局变量：</p>
+<ul>
+<li>全局声明变量是普通变量。<br>它们只能在脚本的顶层通过 const、let 和类声明创建。</li>
+<li>全局对象变量被存储在所谓全局对象的属性中。<br>它们是在脚本的顶层通过 var 和函数声明创建的。<br>可以通过全局变量 globalThis 访问全局对象，它可以用来创建、读取和删除全局对象变量。<br>除此之外，全局对象变量像普通变量一样工作。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span> === globalThis <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">a</span>) <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">a</span>) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><code>var</code>、<code>let</code>和<code>const</code>是 JavaScript 用来存储和声明变量的特殊关键字。它们每个都有唯一性（差异），将简要讨论。</p>
+<ul>
+<li><strong>相同点</strong>：<code>var</code>,<code>let</code>,<code>const</code>声明的变量，是不能被<code>delete</code>的;</li>
+<li><strong>区别</strong>：</li>
+</ul>
+<p><code>var</code>:</p>
+<ul>
+<li>var 分别具有全局和函数作用域，也就是说，定义在函数外部的变量可以全局访问，定义在特定函数内部的变量只能在函数内部访问。</li>
+<li>其次，用户可以使用 var 重新声明变量，用户可以更新 var 变量。</li>
+<li>如果用户在声明之前使用 var 变量，它会使用未定义的值进行初始化，值为 undefined。</li>
+</ul>
+<p><code>let</code>:</p>
+<ul>
+<li>let 变量的作用域仅为块作用域。它不能在特定功能块之外访问，let 关键字是 var 关键字的改进版本。</li>
+<li>用户不能重新声明使用 let 关键字定义的变量，但可以更新它。</li>
+<li>用户可以使用 let 关键字在不同的功能块中声明同名变量。</li>
+<li>无需初始化即可声明。</li>
+</ul>
+<p><code>const</code>:</p>
+<ul>
+<li>const 变量的作用域是块作用域。</li>
+<li>它不能更新或重新声明到范围内</li>
+<li>没有初始化就不能声明</li>
+</ul>
+<p><strong>变量提升</strong>：<code>var</code>声明的变量存在变量提升，即变量可以在声明之前调用，值为 undefined；<br><code>let</code>,<code>const</code>不存在变量提升，即它们声明的变量一定要在声明后使用，否则会报错。</p>
+<p><strong>暂时性死区</strong>：<code>var</code>不存在暂时性死区；<code>let</code>、<code>const</code>存在暂时性死区，只有等声明变量后，才可以获取和使用该变量。</p>
+<p><strong>重复声明</strong>：<code>var</code>允许重复声明；<code>lat</code>、<code>const</code>在同一作用域不允许重复声明。</p>
+<p><strong>修改声明的变量</strong>：<code>var</code>和<code>let</code>可以修改声明的变量；<code>const</code>声明一个只读常量，一旦声明，常量的值就不能改变。</p>
+<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><h3 id="1-请问-var、let-和-const-有何区别？"><a href="#1-请问-var、let-和-const-有何区别？" class="headerlink" title="1.请问 var、let 和 const 有何区别？"></a>1.请问 var、let 和 const 有何区别？</h3><p><strong>作用域不同：</strong></p>
+<p>var 声明的变量的作用域是当前执行上下文，或者说对于声明在任何函数外的变量来说是全局的</p>
+<p>let 、 const 声明的是块级作用域变量，只在它所在的代码块内有效</p>
+<p><strong>变量提升现象：</strong></p>
+<p>var 声明的变量会被提升到作用域顶部，并初始化为 undefined</p>
+<p>let、 const 声明的变量会被提升到顶部，但在声明代码前不能使用（暂时性死区），会被初始化 undefined</p>
+<p><strong>变量&#x2F;常量：</strong></p>
+<p>var 和 let 声明变量，const 声明只读常量</p>
+<p><strong>暂时性死区：</strong></p>
+<p>var 可以先使用，后声明，值为 undefined</p>
+<p>let 、const 必须先声明，后使用；且 const 必须初始化赋值</p>
+<p>在 let、const 声明之前就访问对应的变量与常量，会抛出 ReferenceError，产生原因：</p>
+<p>由 let&#x2F;const 声明的变量，当它们包含的词法环境(Lexical Environment)被实例化时会被创建，但只有在变量的词法绑定(LexicalBinding)已经被求值运算后，才能够被访问（摘自 ES2015 语言标准）</p>
+<p>简单来说：用 let&#x2F;const 声明的变量会先在作用域中被创建出来，但此时还未进行词法绑定，是不能被访问的，会抛出错误。<strong>从在作用域创建变量开始，到变量开始可被访问之间的一段时间，称之为 TDZ(暂时性死区)</strong></p>
+<h3 id="2-const-声明的变量是绝对的不可变吗？"><a href="#2-const-声明的变量是绝对的不可变吗？" class="headerlink" title="2.const 声明的变量是绝对的不可变吗？"></a>2.const 声明的变量是绝对的不可变吗？</h3><p>实际上，不是 const 变量的值不得改动，而是变量指向的那个内存地址不得改动。对于基础类型数据，值保存在变量指向的那个内存地址，等同于常量</p>
+<p>对于复合类型数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const 只能保证这个指针是不变的，至于它指向的数据结构是否变化，是不可控的。</p>
+<p>例如 const 定义一个对象，对象的属性的值是可变的。</p>
+<p><strong>原文地址</strong> <a target="_blank" rel="noopener" href="https://github.com/yihan12/build-up_ES6-ES12/blob/main/variable/README.md">第一章 变量</a><br><strong>下一章</strong>：<a target="_blank" rel="noopener" href="https://github.com/yihan12/build-up_ES6/blob/main/strings/README.md">第二章 模板字符串、字符串新特性</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">易函123</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/02/23/JavaScript/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%90ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E4%B9%8B%20%E5%8F%98%E9%87%8F/">http://example.com/2025/02/23/JavaScript/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%90ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E4%B9%8B%20%E5%8F%98%E9%87%8F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">易函123</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaScript/">JavaScript</a><a class="post-meta__tags" href="/tags/ES6/">ES6</a></div><div class="post_share"><div class="social-share" data-image="/images/avatar.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/02/23/JavaScript/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/%E3%80%90%E8%B7%9F%E7%9D%80%E5%A4%A7%E4%BD%AC%E5%AD%A6JavaScript%E3%80%91%E4%B9%8Blodash%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81%E5%90%88%E5%B9%B6/" title="【跟着大佬学JavaScript】之lodash防抖节流合并"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【跟着大佬学JavaScript】之lodash防抖节流合并</div></div></a></div><div class="next-post pull-right"><a href="/2025/02/23/JavaScript/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%90ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E4%B9%8B%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" title="【ES6学习笔记】之 解构赋值"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【ES6学习笔记】之 解构赋值</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2025/02/23/JavaScript/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%90ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E4%B9%8B%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" title="【ES6学习笔记】之 解构赋值"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">【ES6学习笔记】之 解构赋值</div></div></a></div><div><a href="/2025/02/23/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/JavaScript%E9%9D%A2%E8%AF%95/" title="JavaScript面试汇总"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">JavaScript面试汇总</div></div></a></div><div><a href="/2025/02/23/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/ES6%E6%A8%A1%E5%9D%97%E5%92%8CCommonJS%E7%9A%84%E5%BC%82%E5%90%8C/" title="ES6模块和CommonJS的异同"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">ES6模块和CommonJS的异同</div></div></a></div><div><a href="/2025/02/23/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" title="深浅拷贝"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">深浅拷贝</div></div></a></div><div><a href="/2025/02/23/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8F%96url%E7%9A%84%E5%8F%82%E6%95%B0/" title="如何提取url的参数"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">如何提取url的参数</div></div></a></div><div><a href="/2025/02/23/JavaScript/JavaScript%E9%9D%A2%E8%AF%95/%E7%99%BD%E5%B1%8F%E6%97%B6%E9%97%B4/" title="前端白屏时间长的原因有哪些，怎么优化"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-23</div><div class="title">前端白屏时间长的原因有哪些，怎么优化</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">易函123</div><div class="author-info__description">吾生也有涯，而知也无涯 。以有涯随无涯，殆已！已而为知者，殆而已矣！为善无近名，为恶无近刑。缘督以为经，可以保身，可以全生，可以养亲，可以尽年。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">71</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yihan12"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yihan12" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">易函123博客、学习笔记、生活记录的角落。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text">概览</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">2.</span> <span class="toc-text">块级作用域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TDZ"><span class="toc-number">3.</span> <span class="toc-text">TDZ</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%AD%98%E5%9C%A8-TDZ"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">为什么会存在 TDZ?</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87"><span class="toc-number">4.</span> <span class="toc-text">变量提升</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8D%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E5%A3%B0%E6%98%8E"><span class="toc-number">5.</span> <span class="toc-text">不允许重复声明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#const-%E5%91%BD%E4%BB%A4"><span class="toc-number">6.</span> <span class="toc-text">const 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1"><span class="toc-number">7.</span> <span class="toc-text">全局变量和全局对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB"><span class="toc-number">8.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-number">9.</span> <span class="toc-text">面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AF%B7%E9%97%AE-var%E3%80%81let-%E5%92%8C-const-%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">9.0.1.</span> <span class="toc-text">1.请问 var、let 和 const 有何区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-const-%E5%A3%B0%E6%98%8E%E7%9A%84%E5%8F%98%E9%87%8F%E6%98%AF%E7%BB%9D%E5%AF%B9%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%90%97%EF%BC%9F"><span class="toc-number">9.0.2.</span> <span class="toc-text">2.const 声明的变量是绝对的不可变吗？</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/23/%E6%B5%8F%E8%A7%88%E5%99%A8/%E3%80%90%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%91%E4%B9%8B%E7%BC%93%E5%AD%98/" title="【浏览器】之缓存">【浏览器】之缓存</a><time datetime="2025-02-23T06:00:04.263Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/23/%E6%B5%8F%E8%A7%88%E5%99%A8/%E3%80%90%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%91%E4%B9%8B%E8%B7%A8%E5%9F%9F/" title="【浏览器】之跨域">【浏览器】之跨域</a><time datetime="2025-02-23T06:00:04.263Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/23/%E6%B5%8F%E8%A7%88%E5%99%A8/%20%E3%80%90%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%91%E4%B9%8B%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/" title="【浏览器】之同源策略">【浏览器】之同源策略</a><time datetime="2025-02-23T06:00:04.262Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/23/%E6%B5%8F%E8%A7%88%E5%99%A8/%E3%80%90%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%91%E4%B9%8B%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/" title="【浏览器】之渲染机制">【浏览器】之渲染机制</a><time datetime="2025-02-23T06:00:04.262Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/23/tools/tinymce/image/" title="【tinymce】之图片上传">【tinymce】之图片上传</a><time datetime="2025-02-23T06:00:04.261Z" title="发表于 2025-02-23 14:00:04">2025-02-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 易函123</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '5feacab0e996a1b7ffe4',
+      clientSecret: '89eadd0ac6a70f0ac354fd7964e83f4687a622b5',
+      repo: 'yihan12.github.io',
+      owner: 'yihan12',
+      admin: ['yihan12'],
+      id: '55c44889026a521569d4f2df779b08af',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !true) {
+    if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
